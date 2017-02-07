@@ -43,7 +43,7 @@ input {
   padding: 10px;
 }
 
-.site-card {
+.card {
   background-color: white;
 }
 
@@ -54,7 +54,7 @@ input {
 }
 
 .card-url {
-  
+
 }
 
 hr {
