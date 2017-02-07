@@ -53,6 +53,18 @@ input {
   margin: 0;
 }
 
+.card-url {
+  
+}
+
 hr {
   color: #CFD8DC;
+}
+
+.card-read {
+
+}
+
+.card-delete {
+  float: right;
 }
