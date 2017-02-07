@@ -3,26 +3,40 @@
 <title>Linked List</title>
 <link rel="stylesheet" type="text/css"  href="normalize.css"/>
 <link rel="stylesheet" type="text/css" href="main.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <html>
   <body>
+<!--Main section where user inputs info -->
     <section class="main">
       <header class="header">
-        <h1><span class="headline">Linked</span><img src="linked-list-logo copy.svg" /><span class="headline">List</span></h1>
+        <h1><span class="headline">Linked</span><img src="linked-list-logo copy.svg" alt="Linked List Icon" /><span class="headline">List</span></h1>
         <form>
           <input type="text" placeholder="Website Title" id="input-title" />
-          <input type="url" placeholder="Website URL" id="input-url" />
-          <button type="button" class="enter-btn">Enter</button>
+          <input type="URL" placeholder="Website URL" id="input-url" />
+          <button type="button" id="enter-btn" >Enter</button>
         </form>
       </header>
     </section>
+
+<!--Card catalogue section-->
     <section class="bookmarks">
+      <article class="site-card">
+        <h2 class="card-title">The Website Title</h2>
+        <hr>
+        <p class="card-url">www.thewebsiteurl.com</p>
+        <hr>
+        <a class="card-read">Read</a>
+        <a class="card-delete">Delete</a>
+      </article>
     </section>
+
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="jquery-3.1.1.min.js"><\/script>')</script>
-
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
