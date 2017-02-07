@@ -1,3 +1,8 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+
 header {
   background-color: #455A64;
   text-align: center;s
@@ -5,19 +10,61 @@ header {
 
 header h1 {
   margin: 0;
+  color: white;
+  padding-top: 10px;
 }
 
 header img {
   height: 32px;
-  background
+  margin: 0 5px;
 }
 
-input, .enter-btn {
+input, #enter-btn {
   display: block;
   text-align: center;
   margin: 20px auto;
+  width: 90%;
+  height: 30px;
 }
 
-.enter-btn {
+input {
+  font-size: 26px;
+  text-align: left;
+  font-weight: 400;
+}
 
+#enter-btn {
+  background-color: #FFC107;
+  color: #FFF;
+}
+
+.bookmarks {
+  background-color: #CFD8DC;
+  padding: 10px;
+}
+
+.site-card {
+  background-color: white;
+}
+
+.card-title {
+  color: #455A64;
+  font-weight: 800;
+  margin: 0;
+}
+
+.card-url {
+  
+}
+
+hr {
+  color: #CFD8DC;
+}
+
+.card-read {
+
+}
+
+.card-delete {
+  float: right;
 }
