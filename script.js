@@ -18,7 +18,7 @@ function bookmark (title, url) {
 }
 
 bookmark.prototype.createHtml = function () {
-  return ('<article class="site-card" <h2 class="card-title">'+this.title+'</h2> <hr><p class="card-url">'+ this.url+'</p> <hr> <a class="card-read">Read</a> <a class="card-delete">Delete</a> </article>')
+  return ('<article class="site-card"> <h2 class="card-title">'+this.title+'</h2> <hr><p class="card-url">'+ this.url+'</p> <hr> <a class="card-read">Read</a> <a class="card-delete">Delete</a> </article>')
 }
 
 
