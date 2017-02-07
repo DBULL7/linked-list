@@ -12,4 +12,12 @@ header img {
   background
 }
 
-input .
+input, .enter-btn {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.enter-btn {
+
+}
