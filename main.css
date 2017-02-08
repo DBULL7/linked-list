@@ -18,6 +18,10 @@ header img {
   margin: 0 5px;
 }
 
+form {
+  height: 200px;
+}
+
 input, #enter-btn {
   display: block;
   text-align: center;
@@ -39,10 +43,14 @@ input {
 
 .bookmarks {
   background-color: #CFD8DC;
+  padding: 5px;
+  height: auto;
 }
 
 .card {
   background-color: white;
+  margin: 5px;
+  padding: 5px;
 }
 
 .card-title {
