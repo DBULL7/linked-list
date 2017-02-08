@@ -2,7 +2,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-
 header {
   background-color: #455A64;
   text-align: center;s
@@ -17,6 +16,10 @@ header h1 {
 header img {
   height: 32px;
   margin: 0 5px;
+}
+
+form {
+  height: 200px;
 }
 
 input, #enter-btn {
@@ -40,11 +43,14 @@ input {
 
 .bookmarks {
   background-color: #CFD8DC;
-  padding: 10px;
+  padding: 5px;
+  height: auto;
 }
 
-.site-card {
+.card {
   background-color: white;
+  margin: 5px;
+  padding: 5px;
 }
 
 .card-title {
@@ -54,7 +60,7 @@ input {
 }
 
 .card-url {
-  
+
 }
 
 hr {
