@@ -7,33 +7,35 @@ var $cardList = $('.bookmarks');
 
 //user arrives at site. two input fields. one for the name/title of a site, and another for the site URL. second input can only take a valid url.
 
-// window.onload = function() {
-//   disableEnter();
-//   alert('window is loaded');
-// };
-//
-// //keyup listener
-// $('#input-title, #input-url').keyup(function(){
-//   $('#enter-btn').prop('disabled', false);
-// });
-//
-// //disable button function
-// function disableEnter () {
-//   var submitBtn = document.querySelector('#enter-btn');
-//   submitBtn.disabled = true;
-// }
+window.onload = function() {
+  disableEnter();
+};
 
-// //check input
-// function checkInput () {
-//     if (websiteTitle.val() === "" && websiteUrl.val() === ""){
-//
-// }
+//keyup listener
+$('#input-title, #input-url').keyup(function(){
+  $('#enter-btn').prop('disabled', false);
+});
+
+//disable button function
+function disableEnter () {
+  var submitBtn = document.querySelector('#enter-btn');
+  submitBtn.disabled = true;
+}
+
+//check input
+function checkInput (title, url) {
+
+    if (title === "" || url === "")
+      alert('Missing input');
+
+}
+
 
 //User submits title and url via the enter button. event listener.
 function Bookmark (title, url) {
   this.title = title;
   this.url = url;
-  $cardList.append(this.createHtml())
+  $cardList.prepend(this.createHtml())
 }
 
 Bookmark.prototype.createHtml = function () {
@@ -48,11 +50,14 @@ Bookmark.prototype.createHtml = function () {
 }
 
 //toggle class unread to read
-$($cardList).on('click', '.unread', function() {
+$($cardList).on('click', '.unread', '.card', function() {
   $(this).toggleClass('read');
-  console.log("Is this firing");
+  $(this).parent().toggleClass('card-background');
 
+  console.log("having been read...ENGAGED");
 })
+
+
 
 $($cardList).on('click','.card-delete', function() {
   console.log("Removed!");
@@ -61,8 +66,9 @@ $($cardList).on('click','.card-delete', function() {
 
 
 $('#enter-btn').on('click', function() {
-  //var websiteTitle = $('#input-title').val();
-  //var websiteUrl = $('#input-url').val();
+  checkInput (websiteTitle.val(), websiteUrl.val());
+
+
   new Bookmark(websiteTitle.val(), websiteUrl.val());
   console.log(websiteTitle.val(), websiteUrl.val());
 })
