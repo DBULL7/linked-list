@@ -24,9 +24,8 @@ function disableEnter () {
 
 //check input
 function checkInput (title, url) {
-
-    if (title === "" || url === "")
-      alert('Missing input');
+  if (title === "" || url === "")
+    alert('Missing input');
 
 }
 
