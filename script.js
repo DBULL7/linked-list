@@ -43,14 +43,20 @@ Bookmark.prototype.createHtml = function () {
             '<p class="card-url"><a href="' + this.url +'" target="_blank">'+ this.url+'</a></p>' +
             '<hr>' +
             '<button class="unread">Read</button>' +
-            '<a class="card-delete">Delete</a>' +
+            '<button class="card-delete">Delete</button>' +
           '</article>')
 }
 
 //toggle class unread to read
-$($cardList).on('click', 'button', function() {
+$($cardList).on('click', '.unread', function() {
   $(this).toggleClass('read');
   console.log("Is this firing");
+
+})
+
+$($cardList).on('click','.card-delete', function() {
+  console.log("Removed!");
+  $(this).parent().remove();
 })
 
 
@@ -67,7 +73,10 @@ $('#enter-btn').on('click', function() {
 }) */
 
 //card is generated with title, url, read and delete links and added to the .bookmarks section of the page.
-
+$('card-delete').on('click', 'a', function() {
+  $(this).parent().remove($cardList);
+  console.log('Delete function check');
+});
 
 
 //read link either has class of .read or doesn't
