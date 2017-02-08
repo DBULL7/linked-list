@@ -2,13 +2,32 @@
 
 var websiteTitle = $('#input-title');
 var websiteUrl = $('#input-url');
-// var submitBtn = $('#enter-btn');
-// var submitBtn = $('#enter-btn');
+var $submitBtn = $('#enter-btn');
 var $cardList = $('.bookmarks');
 
 //user arrives at site. two input fields. one for the name/title of a site, and another for the site URL. second input can only take a valid url.
 
+window.onload = function() {
+  disableEnter();
+  alert('window is loaded');
+};
 
+//keyup listener
+$('#input-title, #input-url').keyup(function(){
+  $('#enter-btn').prop('disabled', false);
+});
+
+//disable button function
+function disableEnter () {
+  var submitBtn = document.querySelector('#enter-btn');
+  submitBtn.disabled = true;
+}
+
+// //check input
+// function checkInput () {
+//     if (websiteTitle.val() === "" && websiteUrl.val() === ""){
+//
+// }
 
 //User submits title and url via the enter button. event listener.
 function Bookmark (title, url) {
