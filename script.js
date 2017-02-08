@@ -42,13 +42,13 @@ Bookmark.prototype.createHtml = function () {
             '<hr>' +
             '<p class="card-url"><a href="' + this.url +'" target="_blank">'+ this.url+'</a></p>' +
             '<hr>' +
-            '<button class="unread">Read</button>' +
+            '<a class="unread">Read</a>' +
             '<a class="card-delete">Delete</a>' +
           '</article>')
 }
 
 //toggle class unread to read
-$($cardList).on('click', 'button', function() {
+$($cardList).on('click', '.unread' '', function() {
   $(this).toggleClass('read');
   console.log("Is this firing");
 })

@@ -41,6 +41,11 @@ input {
   color: #FFF;
 }
 
+#enter-btn:hover {
+  background-color: #FFD773;
+  color: #FFF;
+}
+
 .bookmarks {
   background-color: #CFD8DC;
   padding: 5px;
@@ -51,6 +56,9 @@ input {
   background-color: white;
   margin: 5px;
   padding: 5px;
+}
+
+.card:hover {
 }
 
 .card-title {
@@ -67,12 +75,22 @@ hr {
   color: #CFD8DC;
 }
 
-.unread {
+a {
+  text-decoration: underline;
+  text-decoration-color: #F2F4F4;
+  cursor: pointer;
 
 }
 
+/*.unread {
+  text-decoration: underline;
+}*/
+
 .read {
-  color: red;
+  background-color: #F2F4F4;
+  color: #F05A28;
+  font-weight: 800;
+  text-decoration: none;
 
 }
 
