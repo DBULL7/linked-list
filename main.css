@@ -67,7 +67,12 @@ hr {
   color: #CFD8DC;
 }
 
-.card-read {
+.unread {
+
+}
+
+.read {
+  color: red;
 
 }
 
