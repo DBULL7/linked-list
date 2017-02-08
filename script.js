@@ -7,21 +7,21 @@ var $cardList = $('.bookmarks');
 
 //user arrives at site. two input fields. one for the name/title of a site, and another for the site URL. second input can only take a valid url.
 
-window.onload = function() {
-  disableEnter();
-  alert('window is loaded');
-};
-
-//keyup listener
-$('#input-title, #input-url').keyup(function(){
-  $('#enter-btn').prop('disabled', false);
-});
-
-//disable button function
-function disableEnter () {
-  var submitBtn = document.querySelector('#enter-btn');
-  submitBtn.disabled = true;
-}
+// window.onload = function() {
+//   disableEnter();
+//   alert('window is loaded');
+// };
+//
+// //keyup listener
+// $('#input-title, #input-url').keyup(function(){
+//   $('#enter-btn').prop('disabled', false);
+// });
+//
+// //disable button function
+// function disableEnter () {
+//   var submitBtn = document.querySelector('#enter-btn');
+//   submitBtn.disabled = true;
+// }
 
 // //check input
 // function checkInput () {
@@ -37,7 +37,14 @@ function Bookmark (title, url) {
 }
 
 Bookmark.prototype.createHtml = function () {
-  return ('<article class="card"> <h2 class="card-title">'+this.title+'</h2> <hr><p class="card-url"><a href="' + this.url +'" target="_blank">'+ this.url+'</a></p> <hr> <a class="card-read">Read</a> <a class="card-delete">Delete</a> </article>')
+  return ('<article class="card">' +
+            '<h2 class="card-title">' + this.title + '</h2>'+
+            '<hr>' +
+            '<p class="card-url"><a href="' + this.url +'" target="_blank">'+ this.url+'</a></p>' +
+            '<hr>' +
+            '<a class="card-read">Read</a>' +
+            '<a class="card-delete">Delete</a>' +
+          '</article>')
 }
 
 
