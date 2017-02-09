@@ -3,7 +3,9 @@ var $websiteUrl = $('#input-url');
 var $cardList = $('.bookmarks');
 
 
-/////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////Disable Button Functions//////////////////////////////
+
 
 
 // Disable enter button when the page loads
@@ -28,7 +30,9 @@ function disableEnter () {
 }
 
 
+
 /////////////////////Constructor and prototype///////////////////////////////
+
 
 
 // Constructor of Bookmark object
@@ -52,7 +56,9 @@ Bookmark.prototype.createHtml = function () {
 }
 
 
-///////////////////////// Buttons on the cards /////////////////////////////
+
+///////////////////////// Buttons on the cards ////////////////////////////////
+
 
 
 //If the Read button is toggled it adds UI feedback for the user
@@ -76,7 +82,9 @@ $('#enter-btn').on('click', function() {
 })
 
 
+
 ///////////////////////////// Regex Check /////////////////////////////////////
+
 
 
 // Takes input, turns it into a local variable, compares it against a Regex, if it passes it generates a new instance of Bookmark
@@ -99,5 +107,5 @@ function generateBookmark() {
   console.log($bookmarkTitle.val(), $websiteUrl.val());
   $('#input-title').val('');
   $('#input-url').val('');
-  disableEnter()
+  disableEnter();
 }
