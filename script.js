@@ -91,7 +91,7 @@ $('#enter-btn').on('click', function() {
 function checkUrl(url) {
 
   var url = $websiteUrl.val();
-  var urlRegex = /http:www/;
+  var urlRegex = /http:\/\/www/;
 
   if (urlRegex.test(url) === false) {
     alert('Not a valid URL. Please be sure to include http://www Thank you!');
