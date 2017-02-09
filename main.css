@@ -1,5 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
+  height: 100%;
+  background-color: #CFD8DC;
 }
 
 header {
@@ -11,6 +13,7 @@ header h1 {
   margin: 0;
   color: white;
   padding-top: 10px;
+  font-size: 2.5em;
 }
 
 header img {
@@ -27,22 +30,26 @@ input, #enter-btn {
   text-align: center;
   margin: 20px auto;
   width: 90%;
-  height: 30px;
+  height: 35px;
 }
 
 input {
   font-size: 26px;
   text-align: left;
   font-weight: 400;
+  padding-left: 5px;
+  margin:
 }
 
 #enter-btn {
   background-color: #FFC107;
+  border-style: none;
   color: #FFF;
   font-size: 20px;
   font-family: open-sans, sans-serif;
   font-weight: 800;
   height: 40px;
+  width: 90%;
 }
 
 #enter-btn:hover {
@@ -57,6 +64,7 @@ input {
 }
 
 .card {
+  border: 2px solid #607D8B;
   background-color: white;
   margin: 5px;
   padding: 5px;
@@ -72,7 +80,8 @@ input {
 }
 
 .card-url {
-
+  text-decoration: none;
+  color: #607D8B;
 }
 
 hr {
@@ -82,25 +91,93 @@ hr {
 a {
   border-bottom: 2px solid #F2F4F4;
   cursor: pointer;
+  color: #455A64;
+}
 
+a:hover {
+  border-bottom: 2px solid #FFC107;
+  color: #455A56;
+  font-weight: 800;
 }
 
 .card-background {
   background-color: #F2F4F4;
 }
 
-/*.unread {
-  text-decoration: underline;
-}*/
 
 .read {
   background-color: #F2F4F4;
   color: #F05A28;
   font-weight: 800;
   text-decoration: none;
-
 }
 
 .card-delete {
   float: right;
+}
+
+/*media queries*/
+
+@media screen and (min-width: 750px) {
+  body {
+    background-color: #455A64 ;
+    display: flex;
+  }
+
+  .main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .bookmarks {
+    background-color: #CFD8DC;
+    padding: 5px;
+    height: 690px;
+    width: 50%;
+    overflow: scroll;
+    padding-top: 25px;
+  }
+
+  header {
+    width: 90%;
+    /*margin-bottom: 50px;*/
+  }
+
+  header h1 {
+    font-size: 3em;
+    width: 100%;
+  }
+
+  header img {
+    height: 35px;
+  }
+
+  input {
+    margin: 35px auto;
+  }
+
+  button {
+    margin: 35px auto;
+  }
+
+  .card {
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  header img {
+    height: 45px;
+    margin: 0 10px;
+  }
+
+  header h1 {
+    font-size: 3.8em;
+    width: 100%;
+  }
+
 }
