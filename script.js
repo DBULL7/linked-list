@@ -33,6 +33,12 @@ function disableEnter () {
   // submitBtn.disabled = true;
 }
 
+function clearInputs() {
+  $('#input-title').val('');
+  $('#input-url').val('');
+  // websiteTitle.innerText = ""
+  // websiteUrl.innerText = ""
+}
 // //check input
 // function checkInput (title, url) {
 //   if (title === "" || url === "") {
@@ -85,6 +91,7 @@ $('#enter-btn').on('click', function() {
 
   new Bookmark(websiteTitle.val(), websiteUrl.val());
   console.log(websiteTitle.val(), websiteUrl.val());
+  clearInputs();
 })
 
  /* submitBtn.addEventListener('click', function() {
