@@ -57,7 +57,7 @@ Bookmark.prototype.createHtml = function () {
 
 
 
-///////////////////////// Buttons on the cards ////////////////////////////////
+///////////////////////// Click Events /////// ////////////////////////////////
 
 
 
@@ -76,6 +76,13 @@ $($cardList).on('click','.card-delete', function() {
 })
 
 
+//Clear all cards
+$('section').on('click','#clearBookmarks', function() {
+  console.log("Removed All!");
+  $('.card').remove();
+})
+
+
 // When the enter button is clicked it checks the url field's value against a Regex statement
 $('#enter-btn').on('click', function() {
   checkUrl($websiteUrl);
@@ -91,7 +98,7 @@ $('#enter-btn').on('click', function() {
 function checkUrl(url) {
 
   var url = $websiteUrl.val();
-  var urlRegex = /http:\/\/www/;
+  var urlRegex = /http:\/\/www|https:\/\/www/;
 
   if (urlRegex.test(url) === false) {
     alert('Not a valid URL. Please be sure to include http://www Thank you!');
