@@ -12,22 +12,35 @@ window.onload = function() {
 };
 
 //keyup listener
-$('#input-title, #input-url').keyup(function(){
-  $('#enter-btn').prop('disabled', false);
+$('#input-title, #input-url').on('keyup', function(){
+  disableEnter();
+  // $('#enter-btn').prop('disabled', false);
+  // checkInput(websiteTitle.val(), websiteUrl.val());
 });
+
+// $('#input-url').on('keyup', function(){
+//   disableEnter();
+// });
 
 //disable button function
 function disableEnter () {
-  var submitBtn = document.querySelector('#enter-btn');
-  submitBtn.disabled = true;
+  if (websiteTitle.val() === "" || websiteUrl.val() === "") {
+    $('#enter-btn').prop('disabled', true);
+  } else {
+    $('#enter-btn').prop('disabled', false);
+  }
+  // var submitBtn = document.querySelector('#enter-btn');
+  // submitBtn.disabled = true;
 }
 
-//check input
-function checkInput (title, url) {
-  if (title === "" || url === "")
-    alert('Missing input');
-
-}
+// //check input
+// function checkInput (title, url) {
+//   if (title === "" || url === "") {
+//       // return console.log('fuckup');
+//       disableEnter ()
+//       alert('Missing input') //later, turn field red.
+//     }
+// }
 
 
 //User submits title and url via the enter button. event listener.
@@ -65,7 +78,9 @@ $($cardList).on('click','.card-delete', function() {
 
 
 $('#enter-btn').on('click', function() {
-  checkInput (websiteTitle.val(), websiteUrl.val());
+  // checkInput (websiteTitle.val(), websiteUrl.val())
+    // return alert('Missing Input')
+    // Create a function that does regex, alerts user if no match
 
 
   new Bookmark(websiteTitle.val(), websiteUrl.val());
