@@ -1,7 +1,7 @@
 //Creating some global variables off the bat
 
-var websiteTitle = $('#input-title');
-var websiteUrl = $('#input-url');
+var $websiteTitle = $('#input-title');
+var $websiteUrl = $('#input-url');
 var $submitBtn = $('#enter-btn');
 var $cardList = $('.bookmarks');
 
@@ -24,7 +24,7 @@ $('#input-title, #input-url').on('keyup', function(){
 
 //disable button function
 function disableEnter () {
-  if (websiteTitle.val() === "" || websiteUrl.val() === "") {
+  if ($websiteTitle.val() === "" || $websiteUrl.val() === "") {
     $('#enter-btn').prop('disabled', true);
   } else {
     $('#enter-btn').prop('disabled', false);
@@ -33,12 +33,13 @@ function disableEnter () {
   // submitBtn.disabled = true;
 }
 
-function clearInputs() {
-  $('#input-title').val('');
-  $('#input-url').val('');
+// function clearInputs() {
+//   $('#input-title').val('');
+//   $('#input-url').val('');
+// }
   // websiteTitle.innerText = ""
   // websiteUrl.innerText = ""
-}
+
 // //check input
 // function checkInput (title, url) {
 //   if (title === "" || url === "") {
@@ -88,10 +89,10 @@ $('#enter-btn').on('click', function() {
     // return alert('Missing Input')
     // Create a function that does regex, alerts user if no match
 
-
-  new Bookmark(websiteTitle.val(), websiteUrl.val());
-  console.log(websiteTitle.val(), websiteUrl.val());
-  clearInputs();
+  checkUrl($websiteUrl);
+  // new Bookmark(websiteTitle.val(), websiteUrl.val());
+  // console.log(websiteTitle.val(), websiteUrl.val());
+  // clearInputs();
 })
 
  /* submitBtn.addEventListener('click', function() {
@@ -107,7 +108,18 @@ $('card-delete').on('click', 'a', function() {
 
 
 //read link either has class of .read or doesn't
-
+function checkUrl($websiteUrl) {
+  $websiteUrl = $websiteUrl.val();
+  var urlRegex = /http:www/;
+  if (urlRegex.test($websiteUrl) === false) {
+    console.log('not a valid url');
+  } else {
+    new Bookmark($websiteTitle.val(), $websiteUrl);
+    console.log($websiteTitle, $websiteUrl);
+    $($websiteTitle).val('');
+    $websiteUrl.value = "";
+  }
+}
 
 
 //delete link with remove the card from the bookmarks section.
